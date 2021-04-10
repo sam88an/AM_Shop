@@ -1,0 +1,15 @@
+<h2>Category</h2>
+<div
+  *ngFor="let category of categories; index as i"
+  class="custom-control custom-radio m-2"
+>
+  <mat-radio-button
+    type="radio"
+    value="{{ category._id }}"
+    id="a{{ i }}"
+    name="category"
+    class="custom-control-input"
+  ></mat-radio-button>
+  <label class="custom-control-label" for="a{{ i }}">{{ category.name }}</label>
+  <hr />
+</div>

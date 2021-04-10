@@ -1,0 +1,48 @@
+<mat-card class="example-card">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>{{ product.name }}</mat-card-title>
+    <mat-card-subtitle> {{ product.price }}</mat-card-subtitle>
+  </mat-card-header>
+  <img
+    mat-card-image
+    src="http://localhost/{{ product.productImage }}"
+    alt="{{ product.productImage }}"
+  />
+  <mat-card-content>
+    <p></p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button>View Detail</button>
+    <button
+      mat-button
+      *ngIf="!quantity; else cartQuantity"
+      class="btn btn-primary btn-block"
+      (click)="addToCart()"
+    >
+      Add to cart
+    </button>
+    <ng-template #cartQuantity>
+      <div class="row no-guttters">
+        <div class="col-2">
+          <button
+            (click)="minusQuantity()"
+            class="btn btn-block btn-secondry plus"
+          >
+            -
+          </button>
+        </div>
+
+        <div class="col-8 text-center">{{ quantity }} in cart</div>
+        <div class="col-2">
+          <button
+            (click)="plusQuantity()"
+            class="btn btn-block btn-secondry plus"
+          >
+            +
+          </button>
+        </div>
+      </div>
+    </ng-template>
+  </mat-card-actions>
+</mat-card>

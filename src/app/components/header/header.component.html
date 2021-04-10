@@ -1,0 +1,26 @@
+<mat-toolbar
+  class="toolbar"
+  color="primary"
+  fxLayout="row"
+  fxLayoutAlign="space-between center"
+>
+  <div class="left" fxFlex="40" fxLayoutAlign="start center">
+    <div class="logo">
+      <div>Eshop</div>
+    </div>
+    <div class="link" fxLayoutAlign="end end">
+      <button mat-button color="accent" routerLink="/">Home</button>
+    </div>
+  </div>
+  <div class="right" fxFlex="60" fxLayoutAlign="end end">
+    <div class="link">
+      <button mat-button color="accent" routerLink="orders">Orders</button>
+      <button mat-button color="accent" routerLink="cart">
+        Cart
+        <span matBadge="{{ numberOfItems }}" matBadgeOverlap="false"></span>
+      </button>
+      <button mat-button color="accent" routerLink="login">Login</button>
+      <button mat-button color="accent" routerLink="signup">Sign up</button>
+    </div>
+  </div>
+</mat-toolbar>
